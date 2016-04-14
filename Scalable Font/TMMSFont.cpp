@@ -11,13 +11,20 @@
 
 
 
+#include <stdio.h>
+#include <iostream>
+#include <cstring>
+
 #include "TMMSFont.h"
 
 
+using namespace std;
 
 
 
-TMMSFont()
+
+
+TMMSFont::TMMSFont()
 {
     
 }
@@ -25,28 +32,28 @@ TMMSFont()
 
 
 
-string createA(int fontSize, char charToDrawWith)
+string TMMSFont::createA(int fontSize, char charToDrawWith)
 {
     if (fontSize == 1)
     {
-        return charToDrawWith;
+        return string(&charToDrawWith);
     }
     else if (fontSize == 2)
     {
-        return " "+charToDrawWith+"\n"+charToDrawWith+charToDrawWith;
+        return " "+string(&charToDrawWith)+"\n"+string(&charToDrawWith)+string(&charToDrawWith);
     }
     else if (fontSize == 3)
     {
-        return " "+charToDrawWith+" "+"\n"+charToDrawWith+charToDrawWith+charToDrawWith+"\n"+charToDrawWith+" "+charToDrawWith;
+        return " "+string(&charToDrawWith)+" "+"\n"+string(&charToDrawWith)+string(&charToDrawWith)+"\n"+string(&charToDrawWith)+" "+string(&charToDrawWith);
     }
 }
 
-----
- **
-****
-*   *
-*   *
-----
+//----
+// **
+//****
+//*   *
+//*   *
+//----
 
 
 #endif
